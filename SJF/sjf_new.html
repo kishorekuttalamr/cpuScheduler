@@ -10,12 +10,29 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+
+
+        .content {
+            max-width: 80%;
+            text-align: center;
+            color: aliceblue;
+            margin-left: 150px;
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="container">
-            <!-- Card -->
+        <br>
+        <div class="content">
+            <h1>SJF ALGORITHM</h1>
+            <br>
+            <p>Shortest Job First (SJF) Scheduling algorithm is a non-preemptive scheduling algorithm that selects the process with the shortest burst time from the ready queue for execution. It prioritizes shorter jobs over longer ones to minimize the average waiting time. SJF scheduling can be either preemptive or non-preemptive. In the non-preemptive version, once a process is assigned to the CPU, it runs until it completes its CPU burst. In the preemptive version, if a new process arrives with a shorter burst time than the one currently running, the CPU switches to executing the new process. SJF is advantageous because it reduces the average waiting time, leading to better system throughput. However, it can suffer from starvation for longer processes if shorter ones keep arriving. To mitigate this, a variant called Shortest Remaining Time First (SRTF) can be used, which preemptively schedules the process with the shortest remaining time. SJF scheduling is commonly used in batch processing systems and environments where the burst time of processes is known in advance.</p>
+        </div>
+
         <div class="card mt-5">
             <div class="card-body">
                 <label for="arrival-time-sjf" class="text-dark">Enter Arrival Time :</label>
