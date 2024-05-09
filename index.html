@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Algorithm Simulation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("C:/Users/DELL/OneDrive/Desktop/cpuscheduler/amrita.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.7); /* Add overlay to improve readability */
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .option {
+            margin: 20px;
+            animation: zoomIn 1s ease-in-out;
+            position: relative;
+        }
+        .option a {
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 18px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .option a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05); /* Expand the button */
+        }
+        .option:hover .option:not(:hover) a {
+            opacity: 0.7; /* Reduce opacity of other buttons */
+        }
+        /* Animation keyframes */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"> <!-- Add overlay for better readability -->
+        <div class="container">
+            <h1>CPU Scheduling Algorithm Simulation</h1>
+            <div class="options">
+                <div class="option">
+                    <a href="#">First Come First Serve (FCFS)</a>
+                </div>
+                <div class="option">
+                    <a href="#">Shortest Job First (SJF)</a>
+                </div>
+                <div class="option">
+                    <a href="#">Round Robin (RR)</a>
+                </div>
+                <div class="option">
+                    <a href="#">Priority Preemptive</a>
+                </div>
+                <div class="option">
+                    <a href="#">Priority Non-Preemptive</a>
+                </div>
+                <!-- Add more options for other algorithms -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>
