@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCFS Algorithm</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS_Team_5/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+            <div class="col-md-12">
+                <div class="card p-4">
+                    <div class="form-group">
+                        <label for="arrival-time-fcfs" class="text-dark">Enter Arrival Time :</label>
+                        <input class="form-control" type="number" name="arrival-time" id="arrival-time-fcfs"
+                            placeholder="Enter Arrival Time">
+                    </div>
+                    <div class="form-group">
+                        <label for="burst-time-fcfs" class="text-dark">Enter Burst Time :</label>
+                        <input class="form-control" type="number" name="burst-time" id="burst-time-fcfs"
+                            placeholder="Enter Burst Time">
+                    </div>
+                    <div class="form-group" id="btngrp">
+                        <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" style="margin-left: 30%;">
+                            <button type="button" id="addRow" class="btn btn-primary mr-5 ml-5" onclick="addRow()">Add a Row</button>
+                            <button type="button" id="delRow" class="btn btn-danger mr-5" onclick="delRow()">Delete a Row</button>
+                            <button type="button" id="execute" class="btn btn-success" onclick="execute()">Execute</button>
+                        </div>
+                    </div>
+                    <!-- <div style="margin-left: 50%; display: none;">
+                    <button type="button" id="clear" class="btn btn-secondary" onclick="clearPage()">Clear</button>
+                    </div> -->
+                    
+                    <div class="card-body">
+                        <div id="carouselExampleIndicators" class="carousel slide d-none" data-interval="false"></div>
+
+                        <table class="table table-dark table-striped" id="scheduling-table">
+                            <thead>
+                                <tr>
+                                    <th colspan="7">
+                                        <h3>SCHEDULING TABLE</h3>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>Process Name</th>
+                                    <th>Arrival Time</th>
+                                    <th>Burst Time</th>
+                                    <th>Completion Time</th>
+                                    <th>Turn Around Time</th>
+                                    <th>Response Time</th>
+                                    <th>Waiting Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                        
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3"><strong style="font-size: 1.2rem;">Average:</strong></td>
+                                    <td>
+                                        <span id="avg-comp-time-fcfs"></span>
+                                    </td>
+                                    <td>
+                                        <span id="avg-turn-time-fcfs"></span>
+                                    </td>
+                                    <td>
+                                        <span id="avg-resp-time-fcfs"></span>
+                                    </td>
+                                    <td>
+                                        <span id="avg-wt-time-fcfs"></span>
+                                    </td>
+                                    
+                                </tr>
+                            </tfoot>
+                        </table>
+                        
+
+                        <div class="hidden2 d-none">
+                            <ol class="carousel-indicators"></ol>
+                            <div class="carousel-inner"></div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <div id="chart">
+                            <div id="graph" class="pt-3"></div>
+                            <div class="chart-container pt-2" style="position: relative;"></div>
+                            <div id="last"></div>
+                        </div>
+                        <div id="btn1"></div>
+                        <div class="text-dark bo">Gantt Chart:</div>
+                        <table class="table table-dark pt-3 pb-0" id="process-schedule">
+                            <tr id="process-number"></tr>
+                            <tr id="process-time"></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+
+
+    <!-- end -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="fcfs.js"></script>
+    <script src="../Chart/canvasjs.min.js"></script>
+    <script src="../Chart/Chart.min.js" defer></script>
+    <script src="../scripts.js"></script>
+
+</body>
+
+</html>
