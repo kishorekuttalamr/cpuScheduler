@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRIORITY PREEMPTIVE Algorithm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="../main.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel = "icon" href = "../Images_Team_5/color-circle.png" type = "image/x-icon">
+<style>
+    .content {
+        max-width: 80%;
+        text-align: center;
+        color: aliceblue;
+        margin-left: 150px;
+        margin-bottom: 50px;
+    }
+</style>
+</head>
+
+<body>
+    
+    <!-- start -->
+    <div class="container mt-5">
+        <br>
+
+            <div class="content">
+                <h1>Priority Preemptive ALGORITHM</h1>
+                <br>
+                <p>Priority Preemptive Scheduling algorithm is a CPU scheduling method that assigns priorities to each process based on certain criteria, such as the importance or urgency of the process. The process with the highest priority is given the CPU for execution. In preemptive priority scheduling, if a new process with a higher priority arrives in the ready queue while a lower priority process is currently running, the CPU is preempted, and the higher priority process is executed. This ensures that critical tasks are executed promptly, even if lower priority tasks are already running. Priority scheduling can be either static, where priorities are assigned at the start and remain fixed throughout the process's lifetime, or dynamic, where priorities may change during execution based on certain criteria. Dynamic priority scheduling algorithms may use aging mechanisms to prevent starvation of lower priority processes. Priority Preemptive Scheduling is commonly used in real-time systems, where tasks must meet strict deadlines and higher priority tasks must be completed before lower priority ones. However, it can suffer from the problem of priority inversion, where a lower priority task holds a resource needed by a higher priority task, causing the higher priority task to wait unnecessarily. To mitigate this, priority inheritance or priority ceiling protocols can be implemented.</p>
+            </div>
+        <div class="card mt-5">
+            <div class="card-body">
+                    <label for="arrival-time-priority-preemptive" class="text-dark">Enter Arrival Time :</label>
+                    <input class="form-control" type="number" name="arrival-time" id="arrival-time-priority-preemptive" placeholder="Enter Arrival Time">
+                    <label for="burst-time-priority-preemptive" class="text-dark mt-4">Enter Burst Time :</label>
+                    <input class="form-control" type="number" name="burst-time" id="burst-time-priority-preemptive" placeholder="Enter Burst Time">
+                    <label for="priority-preemptive" class="text-dark mt-4">Enter Priority :</label>
+                    <input class="form-control" type="number" name="priority-preemptive" id="priority-preemptive" placeholder="Enter priority">
+                    <div class="form-group" id="btngrp">
+                    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example" style="margin-left: 30%;">
+                        <button type="button" id="addRow" class="btn btn-primary mr-5 ml-5" onclick="addRow()">Add a Row</button>
+                        <button type="button" id="delRow" class="btn btn-danger mr-5" onclick="delRow()">Delete a Row</button>
+                        <button type="button" id="execute" class="btn btn-success" onclick="execute()">Execute</button>
+                    </div>
+                </div>
+            <span class="contact100-form-title pt-3 pb-0" class="text-dark">Output</span>
+            <div id="carouselExampleIndicators" class="carousel slide d-none" data-interval="false"></div>
+
+            <table class="table table-dark pt-3 pb-0"id="scheduling-table" border="2px">
+                <thead>
+                    <tr>
+                        <th colspan="8">
+                            <h3>SCHEDULING TABLE</h3>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Process Name</th>
+                        <th>Arrival Time</th>
+                        <th>Burst time</th>
+                        <th>Priority</th>
+                        <th>Completion time</th>
+                        <th>Turn Around Time</th>
+                        <th>Response Time</th>
+                        <th>Waiting Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+            
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4"><strong style="font-size: 1.2rem;">Average:</strong></td>
+                        <td>
+                            <span id="avg-comp-time-priority-preemptive"></span>
+                        </td>
+                        <td>
+                            <span id="avg-turn-time-priority-preemptive"></span>
+                        </td>
+                        <td>
+                            <span id="avg-resp-time-priority-preemptive"></span>
+                        </td>
+                        <td>
+                            <span id="avg-wt-time-priority-preemptive"></span>
+                        </td>
+                        
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="hidden2 d-none">
+                <ol class="carousel-indicators"></ol>
+                <div class="carousel-inner"></div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div id="chart" class="">
+                <div id="graph" class="pt-3"></div>
+                <div class="chart-container pt-2" style="position: relative;"></div>
+                <div id="last"></div>
+            </div>
+            <div id="btn1"></div>
+            <div class="text-dark bo">Gantt Chart:</div>
+            <table class="table table-dark pt-3 pb-0"id="process-schedule" border="2px">
+                <tr id="process-number"></tr>
+                <tr id="process-time"></tr>
+            </table>
+
+        </div>
+        </div>
+   
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+
+</body>
+<script src="priority_preemptive.js"></script>
+<script src="../Chart/canvasjs.min.js"></script>
+<script src="../Chart/Chart.min.js" defer></script>
+<script src="../scripts.js"></script>
+
+</html>
